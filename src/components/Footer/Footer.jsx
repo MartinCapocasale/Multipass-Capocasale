@@ -4,7 +4,7 @@ function Footer(){
     return (
       <footer className='footer'>
         <h2>  
-            <strong>Mi Ecommerce</strong>
+            <strong>Multipass</strong>
         </h2>
         <ul>
           <li>Inicio</li>
