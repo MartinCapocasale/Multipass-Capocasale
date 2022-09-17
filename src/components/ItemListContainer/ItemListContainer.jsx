@@ -5,8 +5,12 @@ export default function ItemListContainer(props) {
     <div>
         <h1>{props.greeting}</h1>
         <div className="main container" >
-            <Card title="Producto 1" />
-            <Card title="Producto 2" price="$1.00" />
+            <Card 
+            title="Producto 1"
+            imagen="https://place-hold.it/300X300"
+            body="cuerpo de tarjeta"
+            precio="$100"
+             />
         </div>
     </div>
   );
