@@ -1,27 +1,23 @@
-.card-container{
+.item{
     width: 300px;
     overflow: hidden;
     box-shadow:0px 0px 15px -5px;
     transition: 0.3s;
     animation: ease-in;
 }
-.card-container:hover{
+.item:hover{
     transform: scale(1.1);
     box-shadow:0px 0px 15px 0px;
 }
-.card-img{
+.item-imagen{
     overflow: hidden;
     height: 200%;
 }
-.card-content{
+.item-body{
     margin: 1rem;
     margin-top: 0.5rem;
 }
-h3,p{
-    margin:0;
-    padding:0;
-}
-.card-title{
+.item-title{
     margin-bottom:0.5rem;
 }
 
