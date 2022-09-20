@@ -1,5 +1,5 @@
 import Button from "../Button/Button";
-import ItemCount from "../ItemCount/ItemCount";
+import ItemCount from "./ItemCount";
 import "./item.css";
 
 function Item(props) {
@@ -13,8 +13,8 @@ function Item(props) {
           <h3>{props.title}</h3>
         </div>
         <div className="item-description">
-          <p>{props.body}</p>
-          <h4>{props.precio}</h4>
+          <p>{props.description}</p>
+          <h4>{props.price}</h4>
         </div>
         <Button text="Ver Mas"/>
         <ItemCount 

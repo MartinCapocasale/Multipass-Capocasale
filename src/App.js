@@ -2,7 +2,7 @@ import './App.css';
 import Footer from "./components/Footer/Footer"; 
 import NavBar from "./components/NavBar/NavBar"; 
 import Header from './components/Header/Header';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemListContainer from './components/Item/ItemListContainer';
 
 function App() {
   return (
