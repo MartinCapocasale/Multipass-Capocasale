@@ -1,18 +1,19 @@
 import Container from 'react-bootstrap/Container';
 import {Navbar,Nav} from 'react-bootstrap';
 import CartWidget from '../CartWidget/CartWidget';
+import {Link} from "react-router-dom";
 
 function NavBar(){
     return (
       <>
         <Navbar bg="primary" variant="dark">
           <Container>
-            <Navbar.Brand href="#home">Multipass</Navbar.Brand>
-            <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#peliculas">Peliculas</Nav.Link>
-            <Nav.Link href="#series">Series</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
+            <Navbar.Brand as={Link} to={"/"}><b>MULTIPASS</b></Navbar.Brand>
+            <Nav className="me-auto">  
+              <Nav.Link as={Link} to={"/"}><b>Home</b></Nav.Link>
+              <Nav.Link as={Link} to={"/categoria/peliculas"}><b>Peliculas</b></Nav.Link>
+              <Nav.Link as={Link} to={"/categoria/series"}><b>Series</b></Nav.Link>
+              <Nav.Link as={Link} to={""}><b>About</b></Nav.Link>
             </Nav>
             <CartWidget/>
           </Container>
