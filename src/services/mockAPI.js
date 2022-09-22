@@ -22,4 +22,15 @@ function getItems(){
     })
 }
 
+export function getSingleItem(id){
+    return new Promise((resolve,reject) => {
+        setTimeout(()=>{
+            const itemFound = data.find( (item) => { 
+                return id === item.id   
+              })
+              resolve(itemFound);
+            }, 2000);
+    })
+}
+
 export default getItems;

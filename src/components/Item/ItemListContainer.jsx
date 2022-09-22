@@ -5,11 +5,7 @@ import ItemList from "./ItemList";
 export default function ItemListContainer(props) {
   let[data, setData] = useState([]);
 
-  useEffect(()=> {
-    getItems().then((respuestaDatos)=>{
-      setData(respuestaDatos);
-    });
-  },[]);
+  useEffect(()=> {getItems().then((respuestaDatos)=>{setData(respuestaDatos)})},[]);
  
 return (
     <div>
