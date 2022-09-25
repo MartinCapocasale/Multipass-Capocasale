@@ -1,29 +1,25 @@
-import Button from "../Button/Button";
 import ItemCount from "./ItemCount";
 import "./item.css";
 import {Link} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 function Item(props) {
   const urlDetalle = `/item-type/${props.id}`;
   return (
-    <div className="item">
-      <div className="item-body">
-        <div className="item-imagen ">
-            <img src={props.imagen}alt=""></img> 
-        </div> 
-        <div className="item-title">
-          <h3>{props.title}</h3>
-        </div>
-        <div className="item-description">
-          <p>{props.description}</p>
-          <h4>{props.price}</h4>
-        </div>
+    <div className="card">
+      <Link to={urlDetalle}>
+        <img src={props.imagen} alt="" />
+      </Link>
+      <div className="card-body">
+        <h2><b>{props.title}</b></h2>
+        <p>{props.description}</p>
+        <b>{props.price}</b>
+        <ItemCount initial={1}stock={3}/>
         <Link to={urlDetalle}>
-          <Button text="Ver Mas"/>
+          <div className="d-grid gap-2">
+            <Button variant="primary" >Ver Más</Button>{' '}
+          </div>
         </Link>
-        <ItemCount 
-        initial={1}
-        stock={3}/>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import getItems, { getItemsByCaterogy } from "../../services/mockAPI";
 import React, {useState,useEffect} from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import Header from '../Header/Header';
 
 export default function ItemListContainer(props) {
   let[data, setData] = useState([]);
@@ -20,10 +21,8 @@ export default function ItemListContainer(props) {
  
 return (
     <div>
-        <h1>{props.greeting}</h1>
-        <div className="main-container" >
-          <ItemList data={data}/>
-        </div>
+        <Header titulo = {props.greeting}/>
+        <ItemList data={data}/>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 function NavBar(){
     return (
       <>
-        <Navbar bg="secondary" variant="dark">
+        <Navbar bg="black" variant="dark">
           <Container>
             <Navbar.Brand as={Link} to={"/"}><b>MULTIPASS</b></Navbar.Brand>
             <Nav className="me-auto">  
