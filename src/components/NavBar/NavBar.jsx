@@ -16,7 +16,7 @@ function NavBar(){
               <Nav.Link as={Link} to={"/"}><b>Home</b></Nav.Link>
               <Nav.Link as={Link} to={"/categoria/peliculas"}><b>Peliculas</b></Nav.Link>
               <Nav.Link as={Link} to={"/categoria/series"}><b>Series</b></Nav.Link>
-              <Nav.Link as={Link} to={""}><b>About</b></Nav.Link>
+              <Nav.Link as={Link} to={"#"}><b>About</b></Nav.Link>
             </Nav>
             <Form className="d-flex">
               <Form.Control
