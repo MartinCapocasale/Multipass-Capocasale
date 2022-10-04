@@ -7,6 +7,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ItemCount from "./ItemCount";
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
+import { useState } from "react";
+import {Link} from "react-router-dom";
 
 
 const theme = createTheme();
@@ -24,8 +26,9 @@ const labels = {
   };
 
 export default function ItemDetail(props) {
-    const value = `${props.data.estrellas}`;
-    const handleSubmit = (event) => {
+    
+  const value = `${props.data.estrellas}`;
+  const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         console.log({
@@ -33,6 +36,12 @@ export default function ItemDetail(props) {
         password: data.get('password'),
     });
   };
+
+  const [isInCart, setIsInCart] = useState(false);
+	function handleAddToCart(count){
+		alert(`Agregaste al carrito ${count} items!!.`);
+		setIsInCart(true);
+	}
 
   return (
     <ThemeProvider theme={theme}>
@@ -91,7 +100,11 @@ export default function ItemDetail(props) {
                     <li>Categoria: {props.data.category}</li>
                     <li>Estrellas: {props.data.estrellas}</li>
                     <hr />
-                    <ItemCount initial={1}stock={3}/>
+                      { isInCart?
+                        <Link to="/cart"><button>Finalizar Compra de <b>{props.data.title}</b></button> </Link> 
+                        :
+                        <ItemCount onAddToCart={handleAddToCart} initial={1}stock={3}/>
+				              }
                 </ul>
             </Box>
           </Box>
