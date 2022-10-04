@@ -1,10 +1,16 @@
-import React from 'react'
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
+import React, {useContext} from 'react';
+import {cartContext} from "../../context/cartContext";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
+import {Badge} from "@mui/material"
 
 function CartWidget() {
+  const {getItemQty} = useContext(cartContext);
   return (
-    <FontAwesomeIcon icon={faCartShopping} style={{ color:'white', height: "20px" }}/>
+    <div>
+      <Badge badgeContent={getItemQty()} color="success" height="20px" >
+        <ShoppingCartIcon style={{ color: 'white' }}  />
+      </Badge>
+    </div>
   );
 }
 

@@ -7,8 +7,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ItemCount from "./ItemCount";
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {Link} from "react-router-dom";
+import { cartContext } from '../../context/cartContext';
 
 
 const theme = createTheme();
@@ -38,8 +39,10 @@ export default function ItemDetail(props) {
   };
 
   const [isInCart, setIsInCart] = useState(false);
+  
+  const {addItem} = useContext(cartContext);
 	function handleAddToCart(count){
-		alert(`Agregaste al carrito ${count} items!!.`);
+    addItem(props,count)
 		setIsInCart(true);
 	}
 

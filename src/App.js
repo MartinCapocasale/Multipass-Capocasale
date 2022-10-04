@@ -5,11 +5,14 @@ import ItemListContainer from './components/Item/ItemListContainer';
 import ItemDetailContainer from './components/Item/ItemDetailContainer';
 import {BrowserRouter, Routes,Route} from "react-router-dom";
 import Cart from "./components/Cart/Cart"; 
+import MyProvider from './context/cartContext';
 
 function App() {
   return (
     <div className="App">
-        <BrowserRouter>
+      
+      <BrowserRouter>
+        <MyProvider>
           <NavBar/>
             <Routes>
                 <Route path='/' element={
@@ -29,7 +32,8 @@ function App() {
                 }/>
             </Routes>
           <Footer/>
-        </BrowserRouter>
+          </MyProvider>
+      </BrowserRouter>
     </div>
   );
 }
