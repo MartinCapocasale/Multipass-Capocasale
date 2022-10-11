@@ -1,0 +1,14 @@
+table{
+    border-spacing: 0;
+    width: 95%;
+    margin: 15px auto;
+  }
+  
+thead{
+    background-color: #f0000f;
+    margin: 8px auto;
+  }
+  
+thead tr{
+    line-height: 36px;
+  }

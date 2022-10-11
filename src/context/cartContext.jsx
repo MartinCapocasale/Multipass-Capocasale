@@ -40,7 +40,12 @@ const MyProvider =({children}) => {
     const getItemPrice = () =>{
         return cart.reduce((acc, x) => acc += x.price * x.count, 0 )
     }
-    return <Provider value = {{cart,isInCart,addItem,emptyCart,deleteItem,getItemQty,getItemPrice}}> {children} </Provider>
+    function totalPriceCart() {
+        let total = 0;
+        cart.forEach((x) => (total = total + x.count * x.price));
+        return total;
+    }
+    return <Provider value = {{cart,isInCart,addItem,emptyCart,deleteItem,getItemQty,getItemPrice,totalPriceCart}}> {children} </Provider>
 
 } 
 

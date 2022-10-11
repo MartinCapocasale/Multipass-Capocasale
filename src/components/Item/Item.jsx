@@ -13,7 +13,7 @@ function Item(props) {
       <div className="card-body">
         <h2><b>{props.title}</b></h2>
         <p>{props.description}</p>
-        <b>{props.price}</b>
+        <b>${props.price}</b>
         {/*<ItemCount initial={1}stock={3}/>*/}
         <Link to={urlDetalle}>
           <div className="d-grid gap-2">

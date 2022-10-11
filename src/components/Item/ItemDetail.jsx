@@ -42,7 +42,7 @@ export default function ItemDetail(props) {
   
   const {addItem} = useContext(cartContext);
 	function handleAddToCart(count){
-    addItem(props,count)
+    addItem(props.data,count)
 		setIsInCart(true);
 	}
 
@@ -97,14 +97,14 @@ export default function ItemDetail(props) {
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                 <ul className="info-grid">
                     <li>Descripción: {props.data.description}</li>
-                    <li><b>Precio: {props.data.price}</b></li>
+                    <li><b>Precio: ${props.data.price}</b></li>
                     <li>Director: {props.data.director}</li>
                     <li>Año: {props.data.anio}</li>
                     <li>Categoria: {props.data.category}</li>
                     <li>Estrellas: {props.data.estrellas}</li>
                     <hr />
                       { isInCart?
-                        <Link to="/cart"><button>Finalizar Compra de <b>{props.data.title}</b></button> </Link> 
+                        <Link to="/cart"><button>Finalizar Compra!</button> </Link> 
                         :
                         <ItemCount onAddToCart={handleAddToCart} initial={1}stock={3}/>
 				              }

@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from './components/Item/ItemListContainer';
 import ItemDetailContainer from './components/Item/ItemDetailContainer';
 import {BrowserRouter, Routes,Route} from "react-router-dom";
-import Cart from "./components/Cart/Cart"; 
+import Cart from "./components/Cart/CartView"; 
 import MyProvider from './context/cartContext';
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
                 }/>
             </Routes>
           <Footer/>
-          </MyProvider>
+        </MyProvider>
       </BrowserRouter>
     </div>
   );
