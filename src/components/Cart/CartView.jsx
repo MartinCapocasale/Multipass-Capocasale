@@ -1,11 +1,20 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { cartContext } from "../../context/cartContext";
 import "./cartview.css";
+import { Link } from "react-router-dom";
+
 
 function CartView() {
 
-    const { cart, deleteItem,totalPriceCart,emptyCart} = useContext(cartContext);
+    const { cart,isInCart, deleteItem,totalPriceCart,emptyCart} = useContext(cartContext);
+
+    const [endInCart, setEndInCart] = useState(true);
     
+    function handleBuyOrder(id) {
+      if(isInCart(id)){
+        setEndInCart(false);
+      }
+    }
 
   return (
       <div className="contenedor">
@@ -43,6 +52,11 @@ function CartView() {
         <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
           <h3><b>Total de Compra: ${totalPriceCart()}</b></h3>
           <p><button type="alert" onClick={() => emptyCart()}>Vaciar Todo el Carrito</button></p>
+          { endInCart?
+                        <Link to="/"><button onClick={handleBuyOrder}>Finalizar Compra</button> </Link> 
+                        :
+                        <h3>Segui Comprando</h3>
+				              }
         </div>
       </div>
   );
