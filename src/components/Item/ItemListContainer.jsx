@@ -1,4 +1,4 @@
-import getItems, { getItemsByCaterogy } from "../../services/mockAPI";
+import  {getItems,getItemsByCaterogy } from "../../services/firestore";
 import React, {useState,useEffect} from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
