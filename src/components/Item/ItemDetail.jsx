@@ -104,7 +104,10 @@ export default function ItemDetail(props) {
                     <li>Estrellas: {props.data.estrellas}</li>
                     <hr />
                       { isInCart?
-                        <Link to="/cart"><button>Finalizar Compra!</button> </Link> 
+                        <>
+                          <Link to="/"><button>Volver a Inicio</button></Link>
+                          <Link to="/cart"><button >Ir Al Carrito!</button> </Link>
+                        </>
                         :
                         <ItemCount onAddToCart={handleAddToCart} initial={1}stock={3}/>
 				              }

@@ -1,40 +1,38 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
 import "./cartview.css";
-import { Link } from "react-router-dom";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
 
 function CartView() {
+  const context = useContext(cartContext);
+  const { cart, deleteItem,totalPriceCart,emptyCart} = context;
 
-    const { cart,isInCart, deleteItem,totalPriceCart,emptyCart} = useContext(cartContext);
+  let carritovacio = cart.length === 0;
 
-    const [endInCart, setEndInCart] = useState(true);
-    
-    function handleBuyOrder(id) {
-      if(isInCart(id)){
-        setEndInCart(false);
-      }
-    }
+  if (carritovacio) {
+    return <div>Tu carrito está vacio...</div>;
+  }
 
   return (
-      <div className="contenedor">
-        <h1>Tu Carrito</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Miniatura</th>
-              <th>Titulo</th>
-              <th>Precio</th>
-              <th>Categoria</th>
-              <th>Cantidad</th>
-              <th>Remover</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cart.map((item) => {
-              return (
-                <tr>
+    <>
+      <h1>Tu Carrito</h1>
+      <table className="cartList">
+        <thead className="cartList_head">
+          <tr className="cartList_row">
+            <th>Miniatura</th>
+            <th>Titulo</th>
+            <th>Precio</th>
+            <th>Categoria</th>
+            <th>Cantidad</th>
+            <th>Remover</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cart.map((item) => {
+            return (
+              <tr key ={item.id} className="cartList">
                   <td>
                     <img height={50} src={item.imagen} alt={item.title} />
                   </td>
@@ -45,20 +43,14 @@ function CartView() {
                   <td><button type="alert" onClick={() => deleteItem(item.id)}>X</button></td>
                   <td>${item.price * item.count}</td>
               </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
-          <h3><b>Total de Compra: ${totalPriceCart()}</b></h3>
-          <p><button type="alert" onClick={() => emptyCart()}>Vaciar Todo el Carrito</button></p>
-          { endInCart?
-                        <Link to="/"><button onClick={handleBuyOrder}>Finalizar Compra</button> </Link> 
-                        :
-                        <h3>Segui Comprando</h3>
-				              }
-        </div>
-      </div>
+            );
+          })}
+        </tbody>
+      </table>
+      <h3>El total de tu compra es de $ {totalPriceCart()}</h3>
+      <p><button type="alert" onClick={() => emptyCart()}>Vaciar Todo el Carrito</button></p>
+      <CheckoutForm />
+    </>
   );
 }
 
