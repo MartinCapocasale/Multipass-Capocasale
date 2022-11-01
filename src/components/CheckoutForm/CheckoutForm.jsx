@@ -13,7 +13,7 @@ function CheckoutForm() {
 
   const navigate = useNavigate();
   const context = useContext(cartContext);
-  const { cart, totalPriceCart, emptyCart } = context;
+  const { cart, totalPriceCart } = context;
 
   function handleCheckout(event) {
     event.preventDefault();
@@ -76,7 +76,7 @@ function CheckoutForm() {
             required
           />
         </div>
-        <button type="alert" onClick={() => emptyCart()}>Finalizar Compra</button>
+        <button type="submit">Finalizar Compra</button>
       </form>
     </div>
   );

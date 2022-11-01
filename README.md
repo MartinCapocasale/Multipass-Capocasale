@@ -14,5 +14,8 @@ Proyecto web utilizando JavaScript y React:
 
 -@fortawesome Version: "6.2.0",
 
+-FireBase: FireStore database,
+
 ## Objetivo
 El proyecto consiste en crear un e-commerce de venta de peliculas y series de formato digital y formato fisico.
+

@@ -11,7 +11,12 @@ function CartView() {
   let carritovacio = cart.length === 0;
 
   if (carritovacio) {
-    return <div>Tu carrito está vacio...</div>;
+    return <div>
+                <b><h1>Tu carrito está vacio!!</h1></b>
+                
+                <p>Somos una empresa lider en la venta de todo tipo de Peliculas y Series en formato digital,
+            y formato fisico. Tambien tenemos colecciones de DVD y VHS de grandes clasicos de todo el mundo.</p>
+          </div>;
   }
 
   return (
