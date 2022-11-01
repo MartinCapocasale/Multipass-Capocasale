@@ -19,3 +19,5 @@ Proyecto web utilizando JavaScript y React:
 ## Objetivo
 El proyecto consiste en crear un e-commerce de venta de peliculas y series de formato digital y formato fisico.
 
+## Deploy
+Se utiliza Netlify -> https://multipass.netlify.app/
