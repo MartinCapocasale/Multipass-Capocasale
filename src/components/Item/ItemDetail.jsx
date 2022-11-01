@@ -75,7 +75,7 @@ export default function ItemDetail(props) {
             }}
           >
             <Typography component="h1" variant="h5">
-              <h1><b>{props.data.title}</b></h1>
+              <b>{props.data.title}</b>
               <hr />
             </Typography>
             <Box
@@ -87,7 +87,7 @@ export default function ItemDetail(props) {
                 >
                 <Rating
                     name="text-feedback"
-                    value={value}
+                    value={+value}
                     readOnly
                     precision={0.5}
                     emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
